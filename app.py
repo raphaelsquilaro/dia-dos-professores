@@ -1042,7 +1042,7 @@ def render_home(identity: dict[str, str]) -> None:
             <span class="tribute-date">15 de Outubro • Dia dos Professores</span>
           </div>
           <div class="tribute-content">
-            <h2 class="tribute-heading">Ao nosso querido mestre Nilton,</h2>
+            <h2 class="tribute-heading">Ao nossos queridos mestres</h2>
             <p class="tribute-text">
               Obrigado por compartilhar tanto conhecimento com tanta paciência, entusiasmo e paixão contínua. 
               Por sempre nos desafiar a pensar criticamente, a explorar os fundamentos e por nos mostrar que aprender 
@@ -1115,6 +1115,13 @@ def render_home(identity: dict[str, str]) -> None:
             "Aplicações multiplataforma completas: da experiência do usuário no dispositivo móvel até microsserviços de backend robustos.",
             ["Flutter", "Java 21", "Spring Boot", "REST APIs", "Clean Arch"],
         ),
+        (
+            ":material/shield:",
+            "Banco de Dados com MySQL",
+            "Gerenciamento CRUD com um banco de dados - Local ou em Nuvem",
+            "Um banco de dados é uma coleção organizada de informações ou dados estruturados, armazenados eletronicamente em um sistema de computador",
+            ["MySQL", "Postgree", "Firebase", "Supabase"],
+        )
     ]
 
     cols = st.columns(3)
