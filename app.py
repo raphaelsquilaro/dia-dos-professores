@@ -22,7 +22,7 @@ SERVICE_ACCOUNT_PATH = Path(__file__).resolve().parent / SERVICE_ACCOUNT_FILENAM
 
 
 st.set_page_config(
-    page_title="Homenagem ao Prof. Nilton | Dia dos Professores",
+    page_title="Homenagem aos professores | Dia dos Professores",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -233,7 +233,7 @@ FIREWORKS_HTML = """
     .hero-badge-pill { animation: none; }
   }
 </style>
-<div class="teacher-fireworks-hero" role="banner" aria-label="Homenagem com fogos de artifício ao Professor Nilton">
+<div class="teacher-fireworks-hero" role="banner" aria-label="Homenagem com fogos de artifício aos professores">
   <div class="stars-layer"></div>
   <span class="firework-burst f1"></span>
   <span class="firework-burst f2"></span>
@@ -241,7 +241,7 @@ FIREWORKS_HTML = """
   <div class="hero-badge-pill">
     <span>✨ 15 DE OUTUBRO • DIA DOS PROFESSORES ✨</span>
   </div>
-  <h1 class="hero-main-title">Homenagem Especial ao Professor Nilton</h1>
+  <h1 class="hero-main-title">Homenagem Especial aos Professores</h1>
   <p class="hero-sub-title">
     Celebrando a dedicação, a generosidade e a paixão por ensinar que inspiram nossos passos na tecnologia e na engenharia.
   </p>
@@ -804,13 +804,13 @@ def render_authentication() -> None:
         """
         <div style="text-align: center; padding: 1.8rem 0 1rem 0;">
           <span style="display: inline-block; padding: 4px 16px; border-radius: 999px; background: rgba(53, 215, 255, 0.12); border: 1px solid rgba(53, 215, 255, 0.35); color: #35d7ff; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em;">
-            ✦ CELEBRAÇÃO ACADÊMICA • DIA DOS PROFESSORES ✦
+            ✦ CELEBRAÇÃO ACADÊMICA • HOMENAGEM COLETIVA ✦
           </span>
           <h1 style="font-size: 2.4rem; font-weight: 800; margin: 0.8rem 0 0.2rem 0; letter-spacing: -0.02em;">
-            Para o Professor Nilton
+            Para todos os professores
           </h1>
           <p style="font-size: 1.05rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
-            Conhecimento que inspira, tecnologia que conecta e gratidão que se multiplica.
+            Uma homenagem a todos os professores que inspiram, ensinam e fazem parte da nossa trajetória.
           </p>
         </div>
         """
@@ -827,8 +827,8 @@ def render_authentication() -> None:
                 Bem-vindo ao espaço comemorativo!
               </h3>
               <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.85; margin-bottom: 1.5rem;">
-                Esta aplicação foi desenvolvida pelos alunos em reconhecimento ao carinho, didática
-                e incentivo contínuo do <strong>Professor Nilton</strong> na engenharia, computação e tecnologia.
+                Este espaço foi criado para agradecer a todos os professores que compartilham
+                conhecimento, incentivam novas ideias e contribuem para nossa formação.
               </p>
               
               <div class="auth-feature-item">
@@ -1129,6 +1129,74 @@ def render_home(identity: dict[str, str]) -> None:
                 st.write(description)
                 pills_html = "".join([f"<span class='tech-pill'>{tag}</span>" for tag in tags])
                 st.html(f"<div style='margin-top: 10px;'>{pills_html}</div>")
+
+
+TEACHER_TRIBUTES = {
+    "Professor Nilton": (
+        ":material/electric_bolt:",
+        "Obrigado por compartilhar tantos conhecimentos com entusiasmo e por incentivar a "
+        "curiosidade, o pensamento crítico e a criação de soluções. Suas aulas e desafios em "
+        "tecnologia e engenharia contribuíram para minha formação e continuarão inspirando "
+        "novos projetos e aprendizados.",
+        ["Engenharia", "Computação", "Tecnologia", "Cibersegurança", "Python e C++"],
+    ),
+    "Professor Clayton": (
+        ":material/code:",
+        "Obrigado por me ensinar sobre desenvolvimento backend, Java, Spring Boot e Next.js. "
+        "Seu conhecimento e dedicação contribuíram para ampliar minha visão sobre como construir "
+        "aplicações e transformar ideias em projetos.",
+        ["Backend", "Java", "Spring Boot", "Next.js"],
+    ),
+    "Professor Delago": (
+        ":material/settings:",
+        "Obrigado por compartilhar conhecimentos fundamentais sobre sistemas operacionais, "
+        "arquitetura de redes e HTML. Suas aulas ajudaram a ampliar minha compreensão sobre "
+        "os sistemas e as tecnologias que sustentam a web.",
+        ["Sistemas operacionais", "Arquitetura de redes", "HTML"],
+    ),
+    "Professor Sander": (
+        ":material/movie:",
+        "Obrigado por apresentar o universo da multimídia e por contribuir com minha formação "
+        "nessa área. Seu trabalho inspira novas formas de criar e comunicar por meio da tecnologia.",
+        ["Multimídia"],
+    ),
+    "Professor Caio": (
+        ":material/sports_esports:",
+        "Obrigado por compartilhar seus conhecimentos sobre desenvolvimento de jogos e por "
+        "mostrar mais uma possibilidade de criação, experimentação e expressão com a tecnologia.",
+        ["Desenvolvimento de jogos"],
+    ),
+    "Professora Alessandra": (
+        ":material/database:",
+        "Obrigado por ensinar sobre banco de dados e por contribuir para minha compreensão de "
+        "como organizar, armazenar e trabalhar com informações.",
+        ["Banco de dados"],
+    ),
+    "Professora Marcela Raboni": (
+        ":material/volunteer_activism:",
+        "Com carinho e saudade, homenageio a professora Marcela Raboni. Sou grato por tudo que "
+        "me ensinou sobre soft skills, levantamento de requisitos, além de um pouco de Java e "
+        "banco de dados. Seus ensinamentos e sua lembrança seguem fazendo parte da minha trajetória.",
+        ["Soft skills", "Levantamento de requisitos", "Java", "Banco de dados"],
+    ),
+}
+
+
+def render_teacher_tribute(teacher: str) -> None:
+    icon, message, subjects = TEACHER_TRIBUTES[teacher]
+    is_memorial = teacher == "Professora Marcela Raboni"
+
+    st.title(teacher, icon=icon)
+    st.caption(
+        "Homenagem em memória, com carinho e saudade"
+        if is_memorial
+        else "Uma homenagem especial no Dia dos Professores"
+    )
+    with st.container(border=True):
+        st.subheader("Com gratidão" if not is_memorial else "Com carinho e saudade")
+        st.write(message)
+        for subject in subjects:
+            st.badge(subject)
 
 
 def render_lab(identity: dict[str, str]) -> None:
@@ -1564,10 +1632,19 @@ def main() -> None:
         )
 
         st.markdown("### :material/explore: Navegação")
-        page = st.segmented_control(
-            "Selecione uma seção:",
-            options=["Início", "Laboratório", "Conversa com IA", "Meu perfil"],
-            default="Início",
+        page_options = [
+            "Início",
+            *TEACHER_TRIBUTES,
+            "Laboratório",
+            "Conversa com IA",
+            "Meu perfil",
+        ]
+        if st.session_state.get("current_page") not in page_options:
+            st.session_state.current_page = "Início"
+        page = st.selectbox(
+            "Selecione uma página:",
+            options=page_options,
+            index=0,
             key="current_page",
             width="stretch",
         )
@@ -1598,6 +1675,8 @@ def main() -> None:
 
     if page == "Laboratório":
         render_lab(identity)
+    elif page in TEACHER_TRIBUTES:
+        render_teacher_tribute(page)
     elif page == "Conversa com IA":
         render_chat()
     elif page == "Meu perfil":
