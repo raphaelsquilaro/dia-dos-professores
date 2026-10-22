@@ -1154,6 +1154,13 @@ TEACHER_TRIBUTES = {
         "aplicações e transformar ideias em projetos.",
         ["Backend", "Java", "Spring Boot", "Next.js"],
     ),
+    "Professor Vanderlei": (
+        ":material/phone_android:",
+        "Obrigado por me ensinar JavaScript e Flutter e por compartilhar conhecimentos que "
+        "ampliaram minhas possibilidades de criar aplicações e experiências para diferentes "
+        "plataformas.",
+        ["JavaScript", "Flutter"],
+    ),
     "Professor Delago": (
         ":material/settings:",
         "Obrigado por compartilhar conhecimentos fundamentais sobre sistemas operacionais, "

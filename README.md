@@ -5,9 +5,9 @@ mensagens de agradecimento, homenagens a professores, laboratório de ideias,
 perfil personalizável e chat educacional com IA.
 
 A navegação lateral oferece uma página dedicada a cada professor homenageado:
-Nilton, Clayton, Delago, Sander, Caio, Alessandra e uma homenagem em memória da
-professora Marcela Raboni. A tela de login também apresenta a homenagem como
-dedicada a todos os professores.
+Nilton, Clayton, Vanderlei, Delago, Sander, Caio, Alessandra e uma homenagem
+em memória da professora Marcela Raboni. A tela de login também apresenta a
+homenagem como dedicada a todos os professores.
 
 ## Executar localmente
 
